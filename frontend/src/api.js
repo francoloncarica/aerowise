@@ -1,19 +1,21 @@
 import axios from 'axios';
 
+const API_BASE = import.meta.env.VITE_API_URL || '';
+
 const api = axios.create({
-  baseURL: '/api/flights',
+  baseURL: `${API_BASE}/api/flights`,
   headers: { 'Content-Type': 'application/json' },
 });
 
 const notifApi = axios.create({
-  baseURL: '/api/notifications',
+  baseURL: `${API_BASE}/api/notifications`,
   headers: { 'Content-Type': 'application/json' },
 });
 
 // Helper: crea instancia autenticada
 const authApi = (token) => {
   return axios.create({
-    baseURL: '/api/flights',
+    baseURL: `${API_BASE}/api/flights`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Token ${token}`,

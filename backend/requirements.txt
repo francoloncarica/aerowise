@@ -12,3 +12,5 @@ beautifulsoup4>=4.12
 requests>=2.31
 lxml>=5.1
 selenium>=4.15
+gunicorn>=21.0
+whitenoise>=6.5
